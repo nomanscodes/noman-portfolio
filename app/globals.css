@@ -1,42 +1,235 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import "tailwindcss";
+
+@font-face{font-family:'Poppins';font-style:italic;font-weight:400;src:local('Poppins Italic'),local(Poppins-Italic),url(https://fonts.gstatic.com/s/poppins/v6/pxiGyp8kv8JHgFVrJJLucXtAKPY.woff2) format("woff2");unicode-range:U+0900-097F,U+1CD0-1CF6,U+1CF8-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FB}
+
+body{
+    background-color: #f31414 !important;
+}
+.menu{
+font-size: 14px;
+color: #ffffff;
+font-weight: 600;
+text-transform: uppercase; 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.tags {
+    display: inline;
+    position: relative;
   }
+  
+.tags:hover:after {
+    background: #171c24;
+    bottom: -34px;
+    border-radius: 2px;
+    color: #ffffff;
+    content: attr(data-gloss);
+    left: 1%;
+    font-size: 11px;
+    padding:4px;
+    position: absolute;
+    z-index: 98;
+    width: fit-content;
+    min-height:fit-content;
+    top: 38px;
+}
+  
+.portfolio_header{
+  box-shadow: 0 10px 100px rgba(0,0,0,.1);
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+.logo_name{
+line-height: 1.5;
+cursor: pointer;
+color: #333;
+margin: 0;
+padding: 0;
+box-sizing: inherit;
+font-family: inherit;
+font-size: 1.2rem;
+text-transform: uppercase;
+font-weight: 700;
+letter-spacing: 0.5px;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.portfolioHeaderLink{
+  font-size: 1rem;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+.portfolioHeaderLink:hover{
+  color:#7843e9;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+.portfolio_side_link{
+  background: #fff;
+  box-shadow: rgba(100,100,111,.2) 0 7px 29px 0;
+  padding: .5rem;
+}
+.portfolioHead{
+  line-height: 1.5;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #111;
+  font-weight: 800;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.portfolioSubHeading{
+  color: #333;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.8;
+}
+.aboutMeSubHeading{
+  color: #333;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.8;
+}
+.portfolioButton{
+  line-height: 1.5;
+  text-align: center;
+  background: #7843e9;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,.15);
+  transition: transform .3s;
+  padding: 1.5rem 8rem;
+  font-size: 1.7rem;
+}
+.about_me{
+  line-height: 1.5;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1.3rem;
+  position: relative;
+  color: #111;
+  font-weight: 700;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.get_to_know_me{
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+.skillCard{
+line-height: 1;
+box-sizing: inherit;
+font-family: inherit;
+padding: 0.8rem 2rem;
+margin-bottom: 1.5rem;
+margin-right: 1.5rem;
+font-size: 1rem;
+background: rgba(153,153,153,.2);
+border-radius: 5px;
+font-weight: 500;
+color: #666;
+}
+
+
+.projectName{
+  line-height: 1.5;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1.3rem;
+  position: relative;
+  color: #111;
+  font-weight: 700;
+}
+
+.projectShortDescription{
+  font-size: 1.4rem;
+  color: #666;
+  max-width: 60rem;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.contactSubHeading{
+  color: #333;
+  font-size: 1.3rem;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.chat_with_me{
+  box-shadow: rgba(0, 18, 46, 0.18) 0px 2px 20px 0px;
+}
+.chat_with_me_logo{
+  box-shadow: rgba(64, 29, 186, 0.5) 0px 2px 16px;
+}
+
+.chat_box{
+  box-shadow: rgba(0, 18, 46, 0.16) 0px 8px 36px 0px;
+  background-color: #fff;
+}
+
+.chat_box_top{
+color: rgb(255, 255, 255);
+background: linear-gradient(135deg, rgb(64, 29, 186) 0%, rgb(130, 91, 240) 100%);
+letter-spacing: -0.24px;
+}
+
+
+.hidden_chat {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+}
+
+
+.visible_chat {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; 
+}
+
+.messsage_box_div{
+transition: all 0.5s ease-in-out 0s;
+opacity: 1;
+transform: translateY(0px);
+}
+
+@keyframes shake {
+  0% { margin-left: 0rem; }
+  25% { margin-left: 0.5rem; }
+  75% { margin-left: -0.5rem; }
+  100% { margin-left: 0rem; }
+}
+
+.shake_animation{
+  animation: shake 0.2s ease-in-out 0s 2;
+}
+
+
+.shape {
+  position: relative;
+  overflow: hidden;
+  height: 60px;
+}
+
+.shape::before {
+  border-radius: 100%;
+  position: absolute;
+  background-color: white;
+  right: -200px;
+  left: -200px;
+  top: -270px;
+  content: '';
+  bottom: 0;
+}
+
+.login_box{
+    box-shadow: rgba(0, 18, 46, 0.16) 0px 10px 36px 0px;
+    background-color: #fff;
 }
