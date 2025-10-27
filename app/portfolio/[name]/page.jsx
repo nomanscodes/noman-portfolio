@@ -96,7 +96,7 @@ const CaseStudy = () => {
             <div>
                 <CaseStudyHEad thisProject={thisProject} />
                 <div className='bg-[#ffffff]'>
-                    <div className='w-8/12 mx-auto py-5'>
+                    <div className='w-11/12 md:w-10/12 lg:w-8/12 mx-auto py-4 md:py-5'>
                         <Image
                             src={`${API__URL}${thisProject?.thumbnail}`}
                             alt={thisProject?.project_name || "Project thumbnail"}
@@ -107,29 +107,29 @@ const CaseStudy = () => {
                             unoptimized
                         />
                     </div>
-                    <div className='mt-[4rem] w-7/12 mx-auto'>
-                        <h3 className='text-[#111] leading-[1.5] font-[700] text-[1.8rem] mb-[24px]'>Project Overview</h3>
-                        <div className='text-[#555454] text-[1.2rem] leading-9'>
+                    <div className='mt-8 md:mt-12 lg:mt-16 w-11/12 md:w-9/12 lg:w-7/12 mx-auto px-4'>
+                        <h3 className='text-[#111] leading-[1.5] font-[700] text-xl md:text-2xl lg:text-[1.8rem] mb-4 md:mb-6'>Project Overview</h3>
+                        <div className='text-[#555454] text-base md:text-lg lg:text-[1.2rem] leading-7 md:leading-8 lg:leading-9'>
                             <DynamicRichTextComponentWithNoSSR htmlContent={thisProject?.full_description} />
                         </div>
                     </div>
-                    <div className='mt-[4rem] w-7/12 mx-auto'>
-                        <h3 className='text-[#111] leading-[1.5] font-[700] text-[1.8rem] mb-[2rem]'>Tools Used</h3>
-                        <div className='mt-6 flex flex-wrap'>
+                    <div className='mt-8 md:mt-12 lg:mt-16 w-11/12 md:w-9/12 lg:w-7/12 mx-auto px-4'>
+                        <h3 className='text-[#111] leading-[1.5] font-[700] text-xl md:text-2xl lg:text-[1.8rem] mb-4 md:mb-6 lg:mb-8'>Tools Used</h3>
+                        <div className='mt-4 md:mt-6 flex flex-wrap'>
                             {usesTools?.map((item, i) =>
-                                <div key={i} className='skillCard' >
+                                <div key={i} className='skillCard text-sm md:text-base' >
                                     {item}
                                 </div>
                             )}
                         </div>
                     </div>
-                    <div className='mt-[4rem] w-7/12 mx-auto'>
-                        <h3 className='text-[#111] leading-[1.5] font-[700] text-[1.8rem] mb-[2rem]'>See Live</h3>
-                        <div className='mt-6 flex gap-6 pb-7'>
+                    <div className='mt-8 md:mt-12 lg:mt-16 w-11/12 md:w-9/12 lg:w-7/12 mx-auto px-4'>
+                        <h3 className='text-[#111] leading-[1.5] font-[700] text-xl md:text-2xl lg:text-[1.8rem] mb-4 md:mb-6 lg:mb-8'>See Live</h3>
+                        <div className='mt-4 md:mt-6 flex flex-col sm:flex-row gap-4 md:gap-6 pb-7'>
                             <Link href={`${thisProject?.live_link}`} >
-                                <button className='btn btn-primary'>Live Link</button>
+                                <button className='btn btn-primary w-full sm:w-auto'>Live Link</button>
                             </Link>
-                            <button onClick={handleGoBack} className='btn btn-outline'>Go Back</button>
+                            <button onClick={handleGoBack} className='btn btn-outline w-full sm:w-auto'>Go Back</button>
                         </div>
                     </div>
                 </div>

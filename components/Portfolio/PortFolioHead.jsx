@@ -9,11 +9,11 @@ const PortFolioHead = ({ portfolioAllData }) => {
     const headerInfo = portfolioAllData?.info
 
     return (
-        <div className='py-6 bg-white portfolio_header fixed top-0 w-full z-50'>
+        <div className='py-3 md:py-6 bg-white portfolio_header fixed top-0 w-full z-50'>
             <ViewContainer>
-            <div className='flex flex-wrap items-center justify-between'>
-                <div className='flex items-center gap-3'>
-                    <div className='relative w-12 h-12 rounded-full overflow-hidden'>
+            <div className='flex items-center justify-between'>
+                <div className='flex items-center gap-2 md:gap-3'>
+                    <div className='relative w-9 h-9 md:w-12 md:h-12 rounded-full overflow-hidden'>
                         <Image
                             src={`${API__URL}${headerInfo?.icon_image}`}
                             alt={headerInfo?.icon_name || "Profile"}
@@ -24,26 +24,23 @@ const PortFolioHead = ({ portfolioAllData }) => {
                             unoptimized
                         />
                     </div>
-                    <span className='logo_name hover:text-[#7843e9] duration-200'>{headerInfo?.icon_name}</span>
+                    <span className='logo_name hover:text-[#7843e9] duration-200 text-xs md:text-base lg:text-lg hidden sm:inline-block'>{headerInfo?.icon_name}</span>
                 </div>
 
-                <div className='flex items-center gap-8'>
-                    <Link className='portfolioHeaderLink duration-200' href="#home">
+                <nav className='flex items-center gap-2 sm:gap-4 md:gap-6 lg:gap-8'>
+                    <Link className='portfolioHeaderLink text-[10px] sm:text-xs md:text-sm lg:text-base duration-200' href="#home">
                         home
                     </Link>
-                    <Link className='portfolioHeaderLink duration-200' href="#about">
+                    <Link className='portfolioHeaderLink text-[10px] sm:text-xs md:text-sm lg:text-base duration-200' href="#about">
                         about
                     </Link>
-                    <Link className='portfolioHeaderLink duration-200' href="#project">
-                        porject
+                    <Link className='portfolioHeaderLink text-[10px] sm:text-xs md:text-sm lg:text-base duration-200' href="#project">
+                        project
                     </Link>
-                    <Link className='portfolioHeaderLink duration-200' href="#contact">
+                    <Link className='portfolioHeaderLink text-[10px] sm:text-xs md:text-sm lg:text-base duration-200' href="#contact">
                         contact
                     </Link>
-                    <Link className='portfolioHeaderLink duration-200' href={"/"}>
-                        blog
-                    </Link>
-                </div>
+                </nav>
             </div>
             </ViewContainer>
         </div>

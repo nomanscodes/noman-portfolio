@@ -63,28 +63,28 @@ const Chating = () => {
 
     return (
         <>
-            <div className={`${showMessageBar || showLogin ? `hidden` : `fixed`} bottom-9 right-8 z-50`}>
+            <div className={`${showMessageBar || showLogin ? `hidden` : `fixed`} bottom-6 md:bottom-9 right-4 md:right-8 z-50`}>
                 <div className="flex items-center gap-2">
-                    <span onClick={() => setshowMessageBar(true)} className="flex items-center gap-1 bg-white chat_with_me p-2 rounded-full cursor-pointer">
-                        <h3 className="text-[#353535] text-[19px] font-medium px-2">Chat with me</h3>
+                    <span onClick={() => setshowMessageBar(true)} className="hidden sm:flex items-center gap-1 bg-white chat_with_me p-2 rounded-full cursor-pointer">
+                        <h3 className="text-[#353535] text-base md:text-[19px] font-medium px-2">Chat with me</h3>
                         <Image
                             src="/assest/hand.png"
                             alt="Hand wave"
                             width={25}
                             height={25}
-                            className="w-[25px]"
+                            className="w-[20px] md:w-[25px]"
                         />
                     </span>
-                    <div onClick={() => setshowMessageBar(true)} className="bg-[#5616e0] h-[70px] w-[70px] rounded-full flex items-center justify-center md:cursor-pointer z-40 chat_with_me_logo relative group">
+                    <div onClick={() => setshowMessageBar(true)} className="bg-[#5616e0] h-[60px] w-[60px] md:h-[70px] md:w-[70px] rounded-full flex items-center justify-center md:cursor-pointer z-40 chat_with_me_logo relative group">
                         <BsFillChatLeftFill size={20} color="white" />
-                        <div className="absolute bg-white h-0 w-0 group-hover:h-[73px] group-hover:w-[73px] rounded-full ease-in-out transition-all duration-300 flex items-center justify-center">
+                        <div className="absolute bg-white h-0 w-0 group-hover:h-[63px] group-hover:w-[63px] md:group-hover:h-[73px] md:group-hover:w-[73px] rounded-full ease-in-out transition-all duration-300 flex items-center justify-center">
                             <BiSolidPencil size={29} color="#0a7bfd" />
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className={`fixed z-50 chat_box rounded-[16px] transition-opacity duration-500 ${showMessageBar ? ` right-10 bottom-8 visible_chat` : `hidden_chat`} w-[372px] flex flex-col`}>
+            <div className={`fixed z-50 chat_box rounded-[16px] transition-opacity duration-500 ${showMessageBar ? ` right-4 md:right-10 bottom-4 md:bottom-8 visible_chat` : `hidden_chat`} w-[calc(100%-2rem)] sm:w-[372px] max-w-[372px] flex flex-col`}>
                 <div className="max-h-[600px] w-[100%] relative">
                     <div className="relative overflow-hidden">
                         <div className="chat_box_top p-[24px] rounded-t-[16px]">
@@ -197,7 +197,7 @@ const Chating = () => {
                 </div>
             </div>
 
-            <div className={`${showLogin ? `right-10 bottom-16 visible_chat` : `hidden_chat`} fixed z-50 h-[550px] md:w-[350px] bg-white rounded-[16px] flex flex-col justify-between login_box`}>
+            <div className={`${showLogin ? `right-4 md:right-10 bottom-4 md:bottom-16 visible_chat` : `hidden_chat`} fixed z-50 h-[550px] w-[calc(100%-2rem)] sm:w-[350px] max-w-[350px] bg-white rounded-[16px] flex flex-col justify-between login_box`}>
 
                 <div className="flex items-center justify-end p-4">
                     <RxCross2

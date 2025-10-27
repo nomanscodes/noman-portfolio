@@ -13,25 +13,24 @@ const ProjectCard = ({ item }) => {
 
     return (
 
-        <div className='grid grid-cols-7 gap-6 mb-30'>
-            <div className='col-span-4 relative overflow-hidden rounded-xl'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-6 lg:gap-8 mb-20 md:mb-24 lg:mb-30'>
+            <div className='md:col-span-1 lg:col-span-4 relative overflow-hidden rounded-xl'>
                 <Image
                     src={`${API__URL}${item?.thumbnail}`}
                     alt={item?.project_name || "Project thumbnail"}
                     width={800}
                     height={600}
-                    className='w-full h-auto object-cover transition-transform duration-300 hover:scale-105'
+                    className='w-full h-auto object-cover'
                     priority
                     unoptimized
                 />
             </div>
-            <div className='col-span-3 flex items-center justify-center'>
-                <div>
-                    <h3 className='projectName'>{item?.project_name
-                    }</h3>
-                    <h3 className='projectShortDescription'>
+            <div className='md:col-span-1 lg:col-span-3 flex items-center justify-center px-4 md:px-6 lg:px-0'>
+                <div className='text-center md:text-left w-full'>
+                    <h3 className='projectName'>{item?.project_name}</h3>
+                    <div className='projectShortDescription'>
                         <DynamicRichTextComponentWithNoSSR htmlContent={item?.short_description} />
-                    </h3>
+                    </div>
 
                     <Link href={`/portfolio/${item?.project_name}`} className='btn btn-primary'>Case study</Link>
                 </div>
