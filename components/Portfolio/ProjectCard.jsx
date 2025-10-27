@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import React from 'react'
 import { API__URL } from '@/lib/constants';
 
@@ -13,10 +14,16 @@ const ProjectCard = ({ item }) => {
     return (
 
         <div className='grid grid-cols-7 gap-6 mb-30'>
-            <div className='col-span-4'>
-                <picture>
-                    <img src={`${API__URL}${item?.thumbnail}`} alt="" />
-                </picture>
+            <div className='col-span-4 relative overflow-hidden rounded-xl'>
+                <Image
+                    src={`${API__URL}${item?.thumbnail}`}
+                    alt={item?.project_name || "Project thumbnail"}
+                    width={800}
+                    height={600}
+                    className='w-full h-auto object-cover transition-transform duration-300 hover:scale-105'
+                    priority
+                    unoptimized
+                />
             </div>
             <div className='col-span-3 flex items-center justify-center'>
                 <div>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from 'next/image';
 import { BiSolidPencil, BiSolidSend } from "react-icons/bi";
 import { BsFillChatLeftFill } from "react-icons/bs";
 import { FaChevronDown } from "react-icons/fa";
@@ -66,9 +67,13 @@ const Chating = () => {
                 <div className="flex items-center gap-2">
                     <span onClick={() => setshowMessageBar(true)} className="flex items-center gap-1 bg-white chat_with_me p-2 rounded-full cursor-pointer">
                         <h3 className="text-[#353535] text-[19px] font-medium px-2">Chat with me</h3>
-                        <picture>
-                            <img src="/assest/hand.png" className="w-[25px]" alt="" />
-                        </picture>
+                        <Image
+                            src="/assest/hand.png"
+                            alt="Hand wave"
+                            width={25}
+                            height={25}
+                            className="w-[25px]"
+                        />
                     </span>
                     <div onClick={() => setshowMessageBar(true)} className="bg-[#5616e0] h-[70px] w-[70px] rounded-full flex items-center justify-center md:cursor-pointer z-40 chat_with_me_logo relative group">
                         <BsFillChatLeftFill size={20} color="white" />
@@ -86,7 +91,13 @@ const Chating = () => {
                             <div className="flex items-center justify-between">
                                 <div className="flex items-center gap-4 font-[400] text-[42px] break-words whitespace-pre-line textstr">
                                     Hi there
-                                    <picture><img src="/assest/hand.png" className="w-8" alt="" /></picture>
+                                    <Image
+                                        src="/assest/hand.png"
+                                        alt="Hand wave"
+                                        width={32}
+                                        height={32}
+                                        className="w-8"
+                                    />
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <HiDotsVertical size={24} className="cursor-pointer" />
@@ -98,15 +109,22 @@ const Chating = () => {
                                     <h2>Welcome to my website </h2>
                                     <span className="flex items-center gap-2 mt-[2px]">
                                         Ask me anything
-                                        <picture>
-                                            <img className="w-5" src="/assest/flower.png" alt="" />
-                                        </picture>
+                                        <Image
+                                            src="/assest/flower.png"
+                                            alt="Flower"
+                                            width={20}
+                                            height={20}
+                                            className="w-5"
+                                        />
                                     </span>
                                 </span>
-                                <picture>
-                                    <img src="/assest/h3.jpeg"
-                                        className="w-16 h-16 rounded-full" alt="" />
-                                </picture>
+                                <Image
+                                    src="/assest/h3.jpeg"
+                                    alt="Profile"
+                                    width={64}
+                                    height={64}
+                                    className="w-16 h-16 rounded-full object-cover"
+                                />
                             </div>
                         </div>
                         <div>
@@ -190,9 +208,13 @@ const Chating = () => {
                 </div>
                 <div className="max-w-[80%] mx-auto flex flex-col">
                     <div className="flex items-center justify-center mb-[25px]">
-                        <picture>
-                            <img src="/assest/h3.jpeg" className="h-20 w-20 rounded-full" alt="" />
-                        </picture>
+                        <Image
+                            src="/assest/h3.jpeg"
+                            alt="Profile"
+                            width={80}
+                            height={80}
+                            className="h-20 w-20 rounded-full object-cover"
+                        />
                     </div>
 
                     <h3 className="tracking-[0.24px] font-[600] text-[22px] text-[#00122e] mb-[20px]">Please Introduce Yourself</h3>

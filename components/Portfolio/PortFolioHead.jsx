@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import React from 'react'
 import { API__URL } from '@/lib/constants'
 import ViewContainer from '../ViewContainer'
@@ -12,10 +13,17 @@ const PortFolioHead = ({ portfolioAllData }) => {
             <ViewContainer>
             <div className='flex flex-wrap items-center justify-between'>
                 <div className='flex items-center gap-3'>
-                    <picture>
-                        <img src={`${API__URL}${headerInfo?.icon_image
-                            }`} className='w-12 h-12 rounded-full' alt="" />
-                    </picture>
+                    <div className='relative w-12 h-12 rounded-full overflow-hidden'>
+                        <Image
+                            src={`${API__URL}${headerInfo?.icon_image}`}
+                            alt={headerInfo?.icon_name || "Profile"}
+                            width={48}
+                            height={48}
+                            className='rounded-full object-cover'
+                            priority
+                            unoptimized
+                        />
+                    </div>
                     <span className='logo_name hover:text-[#7843e9] duration-200'>{headerInfo?.icon_name}</span>
                 </div>
 

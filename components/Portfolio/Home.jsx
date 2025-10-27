@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import React from 'react'
 import ViewContainer from '../ViewContainer'
 
@@ -36,37 +37,57 @@ const Home = ({ portfolioAllData }) => {
                     <div className='absolute p-1 bg-white left-0'>
                         <div className='flex items-center justify-center px-[9px] py-2.5 rounded hover:bg-[#dbcff7] duration-300'>
                             <Link href={"https://www.linkedin.com/in/nomanhossain2/"}>
-                                <picture>
-                                    <img className='w-[34px]' src="/assest/linkedin-dark.svg" alt="" />
-                                </picture>
+                                <Image
+                                    src="/assest/linkedin-dark.svg"
+                                    alt="LinkedIn"
+                                    width={34}
+                                    height={34}
+                                    className='w-[34px]'
+                                />
                             </Link>
                         </div>
                         <div className='flex items-center justify-center px-[7px] py-2.5 rounded hover:bg-[#dbcff7] duration-300'>
                             <Link href={""}>
-                                <picture>
-                                    <img className='w-[34px]' src="/assest/twitter-dark.svg" alt="" />
-                                </picture>
+                                <Image
+                                    src="/assest/twitter-dark.svg"
+                                    alt="Twitter"
+                                    width={34}
+                                    height={34}
+                                    className='w-[34px]'
+                                />
                             </Link>
                         </div>
                         <div className='flex items-center justify-center px-[7px] py-2.5 rounded hover:bg-[#dbcff7] duration-300'>
                             <Link href={"https://github.com/nomanscodes"}>
-                                <picture>
-                                    <img className='w-[34px]' src="/assest/github-dark.svg" alt="" />
-                                </picture>
+                                <Image
+                                    src="/assest/github-dark.svg"
+                                    alt="GitHub"
+                                    width={34}
+                                    height={34}
+                                    className='w-[34px]'
+                                />
                             </Link>
                         </div>
                         <div className='flex items-center justify-center px-[7px] py-2.5 rounded hover:bg-[#dbcff7] duration-300'>
                             <Link href={""}>
-                                <picture>
-                                    <img className='w-[34px]' src="/assest/yt-dark.svg" alt="" />
-                                </picture>
+                                <Image
+                                    src="/assest/yt-dark.svg"
+                                    alt="YouTube"
+                                    width={34}
+                                    height={34}
+                                    className='w-[34px]'
+                                />
                             </Link>
                         </div>
                         <div className='flex items-center justify-center px-[7px] py-2.5 rounded hover:bg-[#dbcff7] duration-300'>
                             <Link href={"https://leetcode.com/nomanworld/"}>
-                                <picture>
-                                    <img className='w-[34px]' src="/assest/leetcode.avif" alt="" />
-                                </picture>
+                                <Image
+                                    src="/assest/leetcode.avif"
+                                    alt="LeetCode"
+                                    width={34}
+                                    height={34}
+                                    className='w-[34px]'
+                                />
                             </Link>
                         </div>
                     </div>

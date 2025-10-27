@@ -10,6 +10,7 @@ import { useParams, useRouter } from 'next/navigation'
 import axios from 'axios'
 import { API__URL } from '@/lib/constants'
 import Link from 'next/link'
+import Image from 'next/image'
 import dynamic from "next/dynamic"
 
 const DynamicRichTextComponentWithNoSSR = dynamic(() => import("../../../components/RichTextComponent"), {
@@ -96,9 +97,15 @@ const CaseStudy = () => {
                 <CaseStudyHEad thisProject={thisProject} />
                 <div className='bg-[#ffffff]'>
                     <div className='w-8/12 mx-auto py-5'>
-                        <picture>
-                            <img src={`${API__URL}${thisProject?.thumbnail}`} alt="" />
-                        </picture>
+                        <Image
+                            src={`${API__URL}${thisProject?.thumbnail}`}
+                            alt={thisProject?.project_name || "Project thumbnail"}
+                            width={1200}
+                            height={800}
+                            className='w-full h-auto object-cover rounded-lg'
+                            priority
+                            unoptimized
+                        />
                     </div>
                     <div className='mt-[4rem] w-7/12 mx-auto'>
                         <h3 className='text-[#111] leading-[1.5] font-[700] text-[1.8rem] mb-[24px]'>Project Overview</h3>
