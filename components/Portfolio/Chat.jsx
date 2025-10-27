@@ -62,7 +62,7 @@ const Chating = () => {
 
     return (
         <>
-            <div className={` ${showMessageBar || showLogin ? `hidden` : `fixed`}  bottom-9 right-8 z-50`}>
+            <div className={`${showMessageBar || showLogin ? `hidden` : `fixed`} bottom-9 right-8 z-50`}>
                 <div className="flex items-center gap-2">
                     <span onClick={() => setshowMessageBar(true)} className="flex items-center gap-1 bg-white chat_with_me p-2 rounded-full cursor-pointer">
                         <h3 className="text-[#353535] text-[19px] font-medium px-2">Chat with me</h3>
@@ -70,7 +70,7 @@ const Chating = () => {
                             <img src="/assest/hand.png" className="w-[25px]" alt="" />
                         </picture>
                     </span>
-                    <div onClick={() => setshowMessageBar(true)} className=" bg-[#5616e0]  h-[70px] w-[70px] rounded-full flex items-center justify-center md:cursor-pointer z-40 chat_with_me_logo relative group">
+                    <div onClick={() => setshowMessageBar(true)} className="bg-[#5616e0] h-[70px] w-[70px] rounded-full flex items-center justify-center md:cursor-pointer z-40 chat_with_me_logo relative group">
                         <BsFillChatLeftFill size={20} color="white" />
                         <div className="absolute bg-white h-0 w-0 group-hover:h-[73px] group-hover:w-[73px] rounded-full ease-in-out transition-all duration-300 flex items-center justify-center">
                             <BiSolidPencil size={29} color="#0a7bfd" />
@@ -79,7 +79,7 @@ const Chating = () => {
                 </div>
             </div>
 
-            <div className={`fixed z-50 chat_box rounded-[16px] transition-opacity  duration-500 ${showMessageBar ? ` right-10 bottom-8 visible_chat` : `hidden_chat`}  w-[372px]  flex flex-col `}>
+            <div className={`fixed z-50 chat_box rounded-[16px] transition-opacity duration-500 ${showMessageBar ? ` right-10 bottom-8 visible_chat` : `hidden_chat`} w-[372px] flex flex-col`}>
                 <div className="max-h-[600px] w-[100%] relative">
                     <div className="relative overflow-hidden">
                         <div className="chat_box_top p-[24px] rounded-t-[16px]">
@@ -89,8 +89,8 @@ const Chating = () => {
                                     <picture><img src="/assest/hand.png" className="w-8" alt="" /></picture>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <HiDotsVertical size={24} className=" cursor-pointer" />
-                                    <FaChevronDown onClick={() => setshowMessageBar(false)} size={24} className=" cursor-pointer" />
+                                    <HiDotsVertical size={24} className="cursor-pointer" />
+                                    <FaChevronDown onClick={() => setshowMessageBar(false)} size={24} className="cursor-pointer" />
                                 </div>
                             </div>
                             <div className="flex items-center gap-16">
@@ -110,8 +110,8 @@ const Chating = () => {
                             </div>
                         </div>
                         <div>
-                            <div className="chat_box_top px-6 pt-2 flex items-center gap-2 ">
-                                <span className="animate-pulse h-[14px] w-[14px] rounded-full bg-green-500 "></span>
+                            <div className="chat_box_top px-6 pt-2 flex items-center gap-2">
+                                <span className="animate-pulse h-[14px] w-[14px] rounded-full bg-green-500"></span>
                                 <h4 className="text-[14px]">I reply immediatley</h4>
                             </div>
                             <div className="w-[100%] h-4" style={{ backgroundImage: `url("/assest/style2.png")` }}>
@@ -132,10 +132,9 @@ const Chating = () => {
                     <div className="">
                         <div className="flex flex-col flex-grow max-h-[250px] p-4 overflow-y-auto">
 
-                            <div className="flex  mt-3 space-x-3 max-w-[85%] ml-auto justify-end">
+                            <div className="flex mt-3 space-x-3 max-w-[85%] ml-auto justify-end">
                                 <div>
-                                    <div className="bg-gradient-to-l 
-                                    to-[#540af3] from-[#7843e9] text-white px-5 py-2 rounded-full">
+                                    <div className="bg-gradient-to-l to-[#540af3] from-[#7843e9] text-white px-5 py-2 rounded-full">
                                         <p className="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
                                     </div>
                                 </div>
@@ -156,10 +155,10 @@ const Chating = () => {
                             <div className="messsage_box_div">
                                 <textarea value={text}
                                     onChange={(e) => setText(e.target.value)} placeholder="Enter your message..."
-                                    className={`${shake_animat ? `shake_animation` : ``} focus:outline-none w-[100%] min-h-[50px]  text-[16px] font-medium p-2 resize-none leading-[20px] text-[#666] tracking-[.5px]`}></textarea>
+                                    className={`${shake_animat ? `shake_animation ` : ``}focus:outline-none w-[100%] min-h-[50px] text-[16px] font-medium p-2 resize-none leading-[20px] text-[#666] tracking-[.5px]`}></textarea>
                             </div>
                         </div>
-                        <div className="w-[100%] py-3 relative rounded-b-[16px] ">
+                        <div className="w-[100%] py-3 relative rounded-b-[16px]">
                             <div className="flex items-center justify-between pl-5 pr-12">
                                 <MdOutlineEmojiEmotions onClick={() => setShowEmoji(!showEmoji)} size={25} color="#666" className="cursor-pointer" />
 
@@ -168,7 +167,7 @@ const Chating = () => {
                                 </h3>
                             </div>
                             <div className="absolute -right-7 bottom-6">
-                                <div onClick={submitHandeler} className=" bg-[#5616e0]  h-[70px] w-[70px] rounded-full flex items-center justify-center md:cursor-pointer z-40 chat_with_me_logo relative group">
+                                <div onClick={submitHandeler} className="bg-[#5616e0] h-[70px] w-[70px] rounded-full flex items-center justify-center md:cursor-pointer z-40 chat_with_me_logo relative group">
                                     <BiSolidSend size={32} color="white" />
                                     <div className="absolute bg-white h-0 w-0 group-hover:h-[73px] group-hover:w-[73px] rounded-full ease-in-out transition-all duration-300 flex items-center justify-center">
                                         <BiSolidSend size={33} color="#0a7bfd" />
@@ -180,7 +179,7 @@ const Chating = () => {
                 </div>
             </div>
 
-            <div className={` ${showLogin ? `right-10 bottom-16 visible_chat ` : `hidden_chat`} fixed z-50  h-[550px] md:w-[350px]  bg-white rounded-[16px] flex flex-col justify-between login_box`}>
+            <div className={`${showLogin ? `right-10 bottom-16 visible_chat` : `hidden_chat`} fixed z-50 h-[550px] md:w-[350px] bg-white rounded-[16px] flex flex-col justify-between login_box`}>
 
                 <div className="flex items-center justify-end p-4">
                     <RxCross2
@@ -192,7 +191,7 @@ const Chating = () => {
                 <div className="max-w-[80%] mx-auto flex flex-col">
                     <div className="flex items-center justify-center mb-[25px]">
                         <picture>
-                            <img src="/assest/h3.jpeg" className="h-20 w-20  rounded-full" alt="" />
+                            <img src="/assest/h3.jpeg" className="h-20 w-20 rounded-full" alt="" />
                         </picture>
                     </div>
 
@@ -200,16 +199,16 @@ const Chating = () => {
 
                     <div className="mb-[20px]">
                         <input onChange={(e) => setMail(e.target.value)} type="email" placeholder="Enter Your Email"
-                            className={`${shake_animat ? `shake_animation` : ``} focus:outline-none border border-[#9c9a9a] py-[10px] pl-7 text-[16px] font-medium text-[#666] rounded relative w-full`} />
+                            className={`${shake_animat ? `shake_animation ` : ``}focus:outline-none border border-[#9c9a9a] py-2.5 pl-7 text-[16px] font-medium text-[#666] rounded relative w-full`} />
                         <MdOutlineArrowOutward size={22}
-                            className={`${shake_animat ? `shake_animation` : ``}  absolute rotate-90 -mt-[33px] ml-1 text-[#0075ff]`} />
+                            className={`${shake_animat ? `shake_animation ` : ``}absolute rotate-90 -mt-[33px] ml-1 text-[#0075ff]`} />
                     </div>
                     <div className="flex items-center justify-center gap-2 mb-[20px]">
                         <input type="checkbox" className="border border-[#9c9a9a]" />
                         <h1 className="text-[12px] font-medium text-[#666]">Sign up for our newsletter</h1>
                     </div>
-                    <div className='flex items-center '>
-                        <button onClick={createAccouont} className='w-full text-[#fff] bg-gradient-to-l to-[#5611ec] from-[#6e35e9]  text-[1rem] font-[600] uppercase  py-[8px] px-7 rounded shadow'>Send</button>
+                    <div className='flex items-center'>
+                        <button onClick={createAccouont} className='btn btn-gradient w-full'>Send</button>
                     </div>
                 </div>
                 <div className="bg-gradient-to-l to-[#5409f5] from-[#6627ee] rounded-b-[16px]">

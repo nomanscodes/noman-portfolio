@@ -12,7 +12,7 @@ const ProjectCard = ({ item }) => {
 
     return (
 
-        <div className='grid grid-cols-7 gap-6  mb-[9rem]'>
+        <div className='grid grid-cols-7 gap-6 mb-30'>
             <div className='col-span-4'>
                 <picture>
                     <img src={`${API__URL}${item?.thumbnail}`} alt="" />
@@ -26,7 +26,7 @@ const ProjectCard = ({ item }) => {
                         <DynamicRichTextComponentWithNoSSR htmlContent={item?.short_description} />
                     </h3>
 
-                    <Link href={`/portfolio/${item?.project_name}`} className=' text-[#fff] bg-[#7843e9] text-[1.2rem] font-[600] uppercase  py-2 px-7 rounded shadow transition ease-in-out delay-100  hover:-translate-x-1 hover:scale-110 duration-200'>Case study</Link>
+                    <Link href={`/portfolio/${item?.project_name}`} className='btn btn-primary'>Case study</Link>
                 </div>
             </div>
         </div>

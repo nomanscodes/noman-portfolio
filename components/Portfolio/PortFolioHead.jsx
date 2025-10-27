@@ -1,14 +1,16 @@
 import Link from 'next/link'
 import React from 'react'
 import { API__URL } from '@/lib/constants'
+import ViewContainer from '../ViewContainer'
 
 const PortFolioHead = ({ portfolioAllData }) => {
 
     const headerInfo = portfolioAllData?.info
 
     return (
-        <div className='py-6 bg-[#fff] portfolio_header fixed top-0 w-full z-50'>
-            <div className='w-11/12 mx-auto flex flex-wrap items-center justify-between'>
+        <div className='py-6 bg-white portfolio_header fixed top-0 w-full z-50'>
+            <ViewContainer>
+            <div className='flex flex-wrap items-center justify-between'>
                 <div className='flex items-center gap-3'>
                     <picture>
                         <img src={`${API__URL}${headerInfo?.icon_image
@@ -35,6 +37,7 @@ const PortFolioHead = ({ portfolioAllData }) => {
                     </Link>
                 </div>
             </div>
+            </ViewContainer>
         </div>
     )
 }

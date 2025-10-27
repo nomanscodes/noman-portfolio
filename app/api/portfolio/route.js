@@ -6,13 +6,26 @@ export async function GET() {
       headers: {
         'Content-Type': 'application/json',
       },
-      cache: 'no-store'
+      // Cache for 5 minutes (300 seconds)
+      next: { revalidate: 300 }
     })
-    
+
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`)
+    }
+
     const data = await res.json()
-    return NextResponse.json(data)
+
+    return NextResponse.json(data, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600'
+      }
+    })
   } catch (error) {
     console.error('Error fetching portfolio:', error)
-    return NextResponse.json({ error: 'Failed to fetch portfolio' }, { status: 500 })
+    return NextResponse.json(
+      { error: 'Failed to fetch portfolio', message: error.message },
+      { status: 500 }
+    )
   }
 }
