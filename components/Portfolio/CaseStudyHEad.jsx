@@ -3,7 +3,7 @@ import React from 'react'
 import { convert } from 'html-to-text';
 
 
-const CaseStudyHEad = ({ thisProject }) => {
+const CaseStudyHEad = ({ thisProject, handleGoBack }) => {
 
     const data = thisProject
 
@@ -28,8 +28,11 @@ const CaseStudyHEad = ({ thisProject }) => {
                             </h4>
 
                         </div>
-                        <div className='flex items-center justify-center mt-8 md:mt-12'>
-                            <Link href={`${data?.live_link}`} target='_blank' className='btn btn-primary'>project link</Link>
+                        <div className='flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 mt-8 md:mt-12'>
+                            <button onClick={handleGoBack} className='btn btn-outline w-full sm:w-auto'>Go Back</button>
+                            <Link href={`${data?.live_link}`} target='_blank'>
+                                <button className='btn btn-primary w-full sm:w-auto'>project link</button>
+                            </Link>
                         </div>
 
                     </div>

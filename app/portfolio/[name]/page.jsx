@@ -94,7 +94,7 @@ const CaseStudy = () => {
         <>
             <PortFolioHead portfolioAllData={headerData} />
             <div>
-                <CaseStudyHEad thisProject={thisProject} />
+                <CaseStudyHEad thisProject={thisProject} handleGoBack={handleGoBack} />
                 <div className='bg-[#ffffff]'>
                     <div className='w-11/12 md:w-10/12 lg:w-8/12 mx-auto py-4 md:py-5'>
                         <Image
@@ -126,10 +126,10 @@ const CaseStudy = () => {
                     <div className='mt-8 md:mt-12 lg:mt-16 w-11/12 md:w-9/12 lg:w-7/12 mx-auto px-4'>
                         <h3 className='text-[#111] leading-[1.5] font-[700] text-xl md:text-2xl lg:text-[1.8rem] mb-4 md:mb-6 lg:mb-8'>See Live</h3>
                         <div className='mt-4 md:mt-6 flex flex-col sm:flex-row gap-4 md:gap-6 pb-7'>
+                            <button onClick={handleGoBack} className='btn btn-outline w-full sm:w-auto'>Go Back</button>
                             <Link href={`${thisProject?.live_link}`} >
                                 <button className='btn btn-primary w-full sm:w-auto'>Live Link</button>
                             </Link>
-                            <button onClick={handleGoBack} className='btn btn-outline w-full sm:w-auto'>Go Back</button>
                         </div>
                     </div>
                 </div>

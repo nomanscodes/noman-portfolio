@@ -15,12 +15,19 @@ const Home = ({ portfolioAllData }) => {
 
 
     return (
-        <div id='home' className='w-full bg-cover bg-center bg-no-repeat mt-12 sm:mt-14 md:mt-16 lg:mt-20 relative' style={{ backgroundImage: `url("/assest/13338.jpg")` }}>
+        <div
+            id="home"
+            className="w-full bg-cover bg-center bg-no-repeat mt-12 sm:mt-14 md:mt-16 lg:mt-20"
+            style={{
+                backgroundImage:
+                    `linear-gradient(to right, rgba(245,245,245,0.8), rgba(245,245,245,0.8)), url('/assest/common-bg.svg')`
+            }}>
+
             <ViewContainer>
-                <div className='w-full min-h-[500px] sm:min-h-[600px] md:h-[700px] lg:h-[900px] flex items-center justify-center px-4 md:px-6 py-12 md:py-0'>
+                <div className='w-full h-screen sm:min-h-[600px] md:h-[700px] lg:h-[900px] flex items-center justify-center px-4 md:px-6 py-12 md:py-0'>
                     <div className='flex items-center justify-center w-full'>
                         <div className='w-full max-w-4xl'>
-                            <h1 className='portfolioHead'>{homeData?.top_heading}</h1>
+                            <h1 className='text-6xl font-extrabold'>{homeData?.top_heading}</h1>
                             <div className='mt-3 md:mt-5'>
                                 <div className='portfolioSubHeading w-full md:w-[90%] lg:w-[80%] mx-auto px-2 sm:px-4'>
                                     <DynamicRichTextComponentWithNoSSR htmlContent={homeData?.top_bio} />
