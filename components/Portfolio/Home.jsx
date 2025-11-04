@@ -24,10 +24,10 @@ const Home = ({ portfolioAllData }) => {
             }}>
 
             <ViewContainer>
-                <div className='w-full h-screen sm:min-h-[600px] md:h-[700px] lg:h-[900px] flex items-center justify-center px-4 md:px-6 py-12 md:py-0'>
+                <div className='w-full h-[600px] sm:min-h-[600px] md:h-[700px] lg:h-[900px] flex items-center justify-center px-4 md:px-6 py-12 md:py-0'>
                     <div className='flex items-center justify-center w-full'>
-                        <div className='w-full max-w-4xl'>
-                            <h1 className='text-6xl font-extrabold'>{homeData?.top_heading}</h1>
+                        <div className='w-full max-w-4xl text-center'>
+                            <h1 className='text-6xl font-extrabold leading-20'>{homeData?.top_heading}</h1>
                             <div className='mt-3 md:mt-5'>
                                 <div className='portfolioSubHeading w-full md:w-[90%] lg:w-[80%] mx-auto px-2 sm:px-4'>
                                     <DynamicRichTextComponentWithNoSSR htmlContent={homeData?.top_bio} />
@@ -43,7 +43,7 @@ const Home = ({ portfolioAllData }) => {
                     </div>
                     <div className='absolute p-1 bg-white left-0 hidden md:block'>
                         <div className='flex items-center justify-center px-[9px] py-2.5 rounded hover:bg-[#dbcff7] duration-300'>
-                            <Link href={"https://www.linkedin.com/in/nomanhossain2/"}>
+                            <Link href={"https://www.linkedin.com/in/nomanhossain2/"}       target='_blank' rel='noreferrer'>
                                 <Image
                                     src="/assest/linkedin-dark.svg"
                                     alt="LinkedIn"
@@ -65,7 +65,7 @@ const Home = ({ portfolioAllData }) => {
                             </Link>
                         </div>
                         <div className='flex items-center justify-center px-[7px] py-2.5 rounded hover:bg-[#dbcff7] duration-300'>
-                            <Link href={"https://github.com/nomanscodes"}>
+                            <Link href={"https://github.com/nomanscodes"}       target='_blank' rel='noreferrer'>
                                 <Image
                                     src="/assest/github-dark.svg"
                                     alt="GitHub"
@@ -87,7 +87,9 @@ const Home = ({ portfolioAllData }) => {
                             </Link>
                         </div>
                         <div className='flex items-center justify-center px-[7px] py-2.5 rounded hover:bg-[#dbcff7] duration-300'>
-                            <Link href={"https://leetcode.com/nomanworld/"}>
+                            <Link href={"https://leetcode.com/u/nomanscodes/"}
+                             target='_blank' rel='noreferrer'
+                            >
                                 <Image
                                     src="/assest/leetcode.avif"
                                     alt="LeetCode"

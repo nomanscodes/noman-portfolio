@@ -37,7 +37,7 @@ const Portfolio = () => {
 
             // Fetch fresh data
             const res = await axios.get('/api/portfolio', {
-                timeout: 10000 // 10 second timeout
+                timeout: 15000 // 15 second timeout (increased to account for external API call)
             })
 
             if (res.data.error) {
