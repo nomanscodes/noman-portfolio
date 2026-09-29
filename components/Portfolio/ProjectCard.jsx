@@ -13,19 +13,19 @@ const ProjectCard = ({ item }) => {
 
     return (
 
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-6 lg:gap-8 mb-20 md:mb-24 lg:mb-30'>
-            <div className='md:col-span-1 lg:col-span-4 relative overflow-hidden rounded-xl'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-6 lg:gap-8 mb-16 md:mb-20 lg:mb-24'>
+            <div className='md:col-span-1 lg:col-span-4 relative overflow-hidden rounded-xl border border-slate-200 bg-slate-50 p-2 md:p-3 shadow-sm'>
                 <Image
                     src={`${API__URL}${item?.thumbnail}`}
                     alt={item?.project_name || "Project thumbnail"}
                     width={800}
                     height={600}
-                    className='w-full h-auto object-cover'
+                    className='w-full h-auto object-cover aspect-[16/10] rounded-lg'
                     priority
                     unoptimized
                 />
             </div>
-            <div className='md:col-span-1 lg:col-span-3 flex items-center justify-center px-4 md:px-6 lg:px-0'>
+            <div className='md:col-span-1 lg:col-span-3 flex items-center justify-center px-2 md:px-4 lg:px-0'>
                 <div className='text-center md:text-left w-full'>
                     <h3 className='projectName'>{item?.project_name}</h3>
                     <div className='projectShortDescription'>

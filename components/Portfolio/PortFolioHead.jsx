@@ -50,15 +50,14 @@ const PortFolioHead = ({ portfolioAllData }) => {
                 <ViewContainer>
                     <div className='flex items-center justify-between'>
                         <div className='flex items-center gap-2 md:gap-3'>
-                            <div className='relative w-9 h-9 md:w-12 md:h-12 rounded-full overflow-hidden'>
+                            <div className='relative w-9 h-9 md:w-12 md:h-12 rounded-full overflow-hidden border border-slate-200 bg-slate-100'>
                                 <Image
-                                    src={`${API__URL}${headerInfo?.icon_image}`}
-                                    alt={headerInfo?.icon_name || "Profile"}
+                                    src='/assest/profile-pic.jpeg'
+                                    alt={headerInfo?.icon_name || 'Profile'}
                                     width={48}
                                     height={48}
-                                    className='rounded-full object-cover'
+                                    className='rounded-full object-cover w-full h-full'
                                     priority
-                                    unoptimized
                                 />
                             </div>
                             <span className='logo_name hover:text-[#7843e9] duration-200 text-xs md:text-base lg:text-lg hidden sm:inline-block'>{headerInfo?.icon_name}</span>
@@ -77,6 +76,12 @@ const PortFolioHead = ({ portfolioAllData }) => {
                                 href={isSubPage ? '/portfolio#about' : '#about'}
                             >
                                 about
+                            </Link>
+                            <Link
+                                className='portfolioHeaderLink text-sm lg:text-base duration-200'
+                                href={isSubPage ? '/portfolio#experience' : '#experience'}
+                            >
+                                experience
                             </Link>
                             <Link
                                 className='portfolioHeaderLink text-sm lg:text-base duration-200'
@@ -108,16 +113,14 @@ const PortFolioHead = ({ portfolioAllData }) => {
 
             {/* Overlay */}
             <div
-                className={`fixed inset-0 bg-black transition-opacity duration-300 z-[60] md:hidden ${
-                    isDrawerOpen ? 'opacity-50 pointer-events-auto' : 'opacity-0 pointer-events-none'
-                }`}
+                className={`fixed inset-0 bg-black transition-opacity duration-300 z-[60] md:hidden ${isDrawerOpen ? 'opacity-50 pointer-events-auto' : 'opacity-0 pointer-events-none'
+                    }`}
                 onClick={closeDrawer}
             ></div>
 
             {/* Mobile Drawer */}
-            <div className={`fixed top-0 right-0 h-full w-64 sm:w-72 bg-white shadow-2xl z-[70] transform transition-transform duration-300 ease-in-out md:hidden ${
-                isDrawerOpen ? 'translate-x-0' : 'translate-x-full'
-            }`}>
+            <div className={`fixed top-0 right-0 h-full w-64 sm:w-72 bg-white shadow-2xl z-[70] transform transition-transform duration-300 ease-in-out md:hidden ${isDrawerOpen ? 'translate-x-0' : 'translate-x-full'
+                }`}>
                 <div className='flex flex-col p-6 pt-20 gap-2'>
                     <Link
                         className='portfolioHeaderLink text-lg py-3 px-4 rounded-lg duration-200 hover:bg-[#f5f5f5] hover:text-[#7843e9] transition-all'
@@ -132,6 +135,13 @@ const PortFolioHead = ({ portfolioAllData }) => {
                         onClick={() => handleNavClick('#about')}
                     >
                         About
+                    </Link>
+                    <Link
+                        className='portfolioHeaderLink text-lg py-3 px-4 rounded-lg duration-200 hover:bg-[#f5f5f5] hover:text-[#7843e9] transition-all'
+                        href={isSubPage ? '/portfolio#experience' : '#experience'}
+                        onClick={() => handleNavClick('#experience')}
+                    >
+                        Experience
                     </Link>
                     <Link
                         className='portfolioHeaderLink text-lg py-3 px-4 rounded-lg duration-200 hover:bg-[#f5f5f5] hover:text-[#7843e9] transition-all'

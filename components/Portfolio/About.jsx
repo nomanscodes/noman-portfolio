@@ -11,7 +11,7 @@ const DynamicRichTextComponentWithNoSSR = dynamic(() => import("../RichTextCompo
 const About = ({ portfolioAllData }) => {
 
     const infoData = portfolioAllData?.info
-    const skillList = portfolioAllData?.skills
+    const skillList = [...(portfolioAllData?.skills || [])].sort((a, b) => Number(a?.id || 0) - Number(b?.id || 0))
 
     return (
         <div id='about' className='bg-[#f9f9f9] py-12 sm:py-16 md:py-20 lg:py-24'>
@@ -42,7 +42,7 @@ const About = ({ portfolioAllData }) => {
                     <div>
                         <h1 className='text-[#333] text-xl md:text-2xl lg:text-[1.6rem] font-bold'>MY SKILLS</h1>
                         <div className='mt-4 md:mt-6 flex flex-wrap'>
-                            {skillList?.map((item, i) =>
+                            {skillList.map((item) =>
                                 <div key={item?.id} className='skillCard capitalize text-sm md:text-base' >
                                     {item?.teck_name}
                                 </div>
